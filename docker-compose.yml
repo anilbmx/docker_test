@@ -1,0 +1,19 @@
+version: "3.6"
+
+services:
+
+  flask:
+    image: anil006dockerhub/flask-image:2
+    container_name: flask
+    restart: always
+    environment:
+      - APP_NAME=MyFlaskApp
+    expose:
+      - 8080
+
+  nginx:
+    image: anil006dockerhub/mynginx-image:2
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
